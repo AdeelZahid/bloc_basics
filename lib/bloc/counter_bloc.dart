@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'dart:developer';
-
 enum CounterAction {
   Increment,
   Decrement,
@@ -11,16 +9,16 @@ enum CounterAction {
 class CounterBloc {
   int counter = 0;
   final _stateStreamController = StreamController<int>();
-  StreamSink<int> get counterSink => _stateStreamController.sink;
+  StreamSink<int> get _counterSink => _stateStreamController.sink;
   Stream<int> get counterStream => _stateStreamController.stream;
 
   final _eventStreamController = StreamController<CounterAction>();
   StreamSink<CounterAction> get eventSink => _eventStreamController.sink;
-  Stream<CounterAction> get eventStream => _eventStreamController.stream;
+  Stream<CounterAction> get _eventStream => _eventStreamController.stream;
 
   CounterBloc() {
     counter = 0;
-    eventStream.listen((event) {
+    _eventStream.listen((event) {
       if (event == CounterAction.Increment) {
         counter++;
       } else if (event == CounterAction.Decrement) {
@@ -31,7 +29,12 @@ class CounterBloc {
         return 0;
       }
 
-      counterSink.add(counter);
+      _counterSink.add(counter);
     });
+  }
+
+  void blocDispose() {
+    _stateStreamController.close();
+    _eventStreamController.close();
   }
 }
