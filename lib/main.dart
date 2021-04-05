@@ -1,4 +1,5 @@
 import 'package:bloc_beginner/screen/home_screen.dart';
+import 'package:bloc_beginner/screen/news_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: NewsScreen(),
     );
   }
 }

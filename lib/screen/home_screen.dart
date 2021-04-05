@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:bloc_beginner/bloc/counter_bloc.dart';
+import 'package:bloc_beginner/screen/news_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -27,6 +28,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => NewsScreen()))
+                  })
+        ],
       ),
       body: Center(
         child: Column(
@@ -61,20 +70,20 @@ class _MyHomePageState extends State<MyHomePage> {
             tooltip: 'Increment',
             child: Icon(Icons.add),
           ),
-          FloatingActionButton(
-            onPressed: () {
-              counterBloc.eventSink.add(CounterAction.Decrement);
-            },
-            tooltip: 'Decrement',
-            child: Icon(Icons.remove),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              counterBloc.eventSink.add(CounterAction.Reset);
-            },
-            tooltip: 'Reset',
-            child: Icon(Icons.loop),
-          ),
+          // FloatingActionButton(
+          //   onPressed: () {
+          //     counterBloc.eventSink.add(CounterAction.Decrement);
+          //   },
+          //   tooltip: 'Decrement',
+          //   child: Icon(Icons.remove),
+          // ),
+          // FloatingActionButton(
+          //   onPressed: () {
+          //     counterBloc.eventSink.add(CounterAction.Reset);
+          //   },
+          //   tooltip: 'Reset',
+          //   child: Icon(Icons.loop),
+          // ),
         ],
       ),
     );
