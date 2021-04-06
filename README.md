@@ -1,4 +1,4 @@
-# bloc_beginner
+# Bloc Implementation and Api Fetch
 
 A new Flutter project.
 
@@ -17,10 +17,10 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-![Preview](/screen1.png)
+![Home Screen](./screenshots/screen1.png)
 
-![App UI](/screen2.png)
+![News Api Screen](/screenshots/screen2.png)
 
-![Preview](/screen3.png)
+![News Detail Screen](/screenshots/screen3.png)
 
-![App UI](/screen4.png)
+![News Detail Image](/screenshots/screen4.png)
