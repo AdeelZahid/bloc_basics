@@ -17,10 +17,10 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-![Home Screen](./screenshots/screen1.png)
+![Home Screen](https://github.com/AdeelZahid/bloc_basics/blob/main/screenshots/screen1.PNG)
 
-![News Api Screen](/screenshots/screen2.png)
+![News Api Screen](https://github.com/AdeelZahid/bloc_basics/blob/main/screenshots/screen2.PNG)
 
-![News Detail Screen](/screenshots/screen3.png)
+![News Detail Screen](https://github.com/AdeelZahid/bloc_basics/blob/main/screenshots/screen3.PNG)
 
-![News Detail Image](https://github.com/AdeelZahid/bloc_basics/blob/main/screenshots/screen1.PNG)
+![News Detail Image](https://github.com/AdeelZahid/bloc_basics/blob/main/screenshots/screen4.PNG)
