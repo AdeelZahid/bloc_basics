@@ -23,4 +23,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ![News Detail Screen](/screenshots/screen3.png)
 
-![News Detail Image](screenshots/screen4.png)
+![News Detail Image](https://github.com/AdeelZahid/bloc_basics/blob/main/screenshots/screen1.PNG)
