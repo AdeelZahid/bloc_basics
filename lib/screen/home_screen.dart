@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:bloc_beginner/bloc/counter_bloc.dart';
 import 'package:bloc_beginner/screen/news_screen.dart';
+import 'package:bloc_beginner/widget/round_icon_%20button.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -60,31 +59,31 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              counterBloc.eventSink.add(CounterAction.Increment);
-            },
-            tooltip: 'Increment',
-            child: Icon(Icons.add),
-          ),
-          // FloatingActionButton(
-          //   onPressed: () {
-          //     counterBloc.eventSink.add(CounterAction.Decrement);
-          //   },
-          //   tooltip: 'Decrement',
-          //   child: Icon(Icons.remove),
-          // ),
-          // FloatingActionButton(
-          //   onPressed: () {
-          //     counterBloc.eventSink.add(CounterAction.Reset);
-          //   },
-          //   tooltip: 'Reset',
-          //   child: Icon(Icons.loop),
-          // ),
-        ],
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.only(bottom: 20.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            RoundIconButton(
+              icon: Icons.add,
+              onPress: () {
+                counterBloc.eventSink.add(CounterAction.Increment);
+              },
+            ),
+            RoundIconButton(
+              icon: Icons.remove,
+              onPress: () {
+                counterBloc.eventSink.add(CounterAction.Decrement);
+              },
+            ),
+            RoundIconButton(
+              icon: Icons.loop,
+              onPress: () {
+                counterBloc.eventSink.add(CounterAction.Reset);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

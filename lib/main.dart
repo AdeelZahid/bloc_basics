@@ -1,5 +1,4 @@
 import 'package:bloc_beginner/screen/home_screen.dart';
-import 'package:bloc_beginner/screen/news_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

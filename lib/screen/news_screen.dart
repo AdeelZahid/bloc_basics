@@ -1,8 +1,6 @@
 import 'package:bloc_beginner/bloc/news_bloc.dart';
-import 'package:bloc_beginner/constants/strings.dart';
 import 'package:bloc_beginner/model/newsInfo.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
 class NewsScreen extends StatefulWidget {
@@ -61,7 +59,8 @@ class _NewsScreenState extends State<NewsScreen> {
                             child: AspectRatio(
                                 aspectRatio: 1,
                                 child: Image.network(
-                                  article.urlToImage,
+                                  article.urlToImage ??
+                                      Image.asset('assets/images/user.jpeg'),
                                   fit: BoxFit.cover,
                                 )),
                           ),
