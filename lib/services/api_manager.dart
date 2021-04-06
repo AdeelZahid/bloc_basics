@@ -13,7 +13,7 @@ class API_Manager {
       // http.Response response = await client.get(
       //     'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=256cc8a1c2c04a75a5fe8743cebfdc13');
       http.Response response = await client.get(Strings.news_url);
-      print('RESPONSE: ${response.body}');
+      // print('RESPONSE: ${response.body}');
       if (response.statusCode == 200) {
         var jsonString = response.body;
         var jsonMap = json.decode(jsonString);

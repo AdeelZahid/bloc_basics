@@ -1,5 +1,6 @@
 import 'package:bloc_beginner/bloc/news_bloc.dart';
 import 'package:bloc_beginner/model/newsInfo.dart';
+import 'package:bloc_beginner/screen/news_detial_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -49,43 +50,56 @@ class _NewsScreenState extends State<NewsScreen> {
                     return Container(
                       height: 100,
                       margin: const EdgeInsets.all(8),
-                      child: Row(
-                        children: <Widget>[
-                          Card(
-                            clipBehavior: Clip.antiAlias,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: AspectRatio(
-                                aspectRatio: 1,
-                                child: Image.network(
-                                  article.urlToImage ??
-                                      Image.asset('assets/images/user.jpeg'),
-                                  fit: BoxFit.cover,
-                                )),
-                          ),
-                          SizedBox(width: 16),
-                          Flexible(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(formattedTime),
-                                Text(
-                                  article.title,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  article.description,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ],
+                      child: GestureDetector(
+                        onTap: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NewsDetailScreen(
+                                article: article,
+                                formattedTime: formattedTime,
+                              ),
                             ),
                           ),
-                        ],
+                        },
+                        child: Row(
+                          children: <Widget>[
+                            Card(
+                              clipBehavior: Clip.antiAlias,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(24),
+                              ),
+                              child: AspectRatio(
+                                  aspectRatio: 1,
+                                  child: Image.network(
+                                    article.urlToImage ??
+                                        Image.asset('assets/images/user.jpeg'),
+                                    fit: BoxFit.cover,
+                                  )),
+                            ),
+                            SizedBox(width: 16),
+                            Flexible(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(formattedTime),
+                                  Text(
+                                    article.title,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    article.description,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   });
